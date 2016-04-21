@@ -3,6 +3,7 @@ var Mysql = require('../config/db/myf');
 var Redis = require('../config/db/redis');
 var router = express.Router();
 var async = require('async');
+var _ = require('lodash');
 
 /* GET home page. */
 router.post('/askrank', function (req, res, next) {
@@ -129,6 +130,8 @@ router.post('/getanslist', function (req, res, next) {
                             var faqids = re.map(function (i) {
                                 return i.faqid;
                             });
+
+                            var faqids = _.uniq(faqids);
 
                             var posts = [];
                             async.each(faqids, function (item, callback) {
