@@ -37,7 +37,17 @@ function handleError () {
                 port: 3306
             });
             console.log('formal');
-        }else if(ipv4 == '120.26.245.233'){
+        }else if(ipv4 == '120.55.90.62'){
+            conn = mysql.createConnection({
+                host: 'rdsvy6jrfrbi2a2.mysql.rds.aliyuncs.com',
+                user: 'ecp',
+                password: 'CqmygDsx2s_MYSQL',
+                database: 'project',
+                port: 3306
+            });
+            console.log('node formal');
+        }
+        else if(ipv4 == '120.26.245.233'){
             conn = mysql.createConnection({
                 host: 'rdsf39n5tp6w482946xa.mysql.rds.aliyuncs.com',
                 user: 'ecp_test',
